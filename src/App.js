@@ -1,17 +1,25 @@
 import React from "react"
 import "./App.css"
-import Forms from "./container/Forms"
-import Button from "@material-ui/core/Button"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import Page1 from "./pages/Page1"
+import Page2 from "./pages/Page2"
+import Page3 from "./pages/Page3"
 
 function App() {
   return (
-    <div className="App">
-      <h3>Task</h3>
-      <Button variant="contained" className="button">
-        Default
-      </Button>
-      <Forms />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Page1 />
+        </Route>
+        <Route path="/page2">
+          <Page2 />
+        </Route>
+        <Route path="/page3">
+          <Page3 />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
