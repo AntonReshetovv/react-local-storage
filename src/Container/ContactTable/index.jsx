@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -8,12 +7,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Buttons from "../../Component/Button";
 import Container from "@material-ui/core/Container";
-
-const useStyles = makeStyles({
-  table: {
-    backgroundColor: "grey"
-  }
-});
+import "./style.css";
 
 function createData(name, phone, email) {
   return { name, phone, email };
@@ -25,12 +19,12 @@ const rows = [
   createData("Bill", 56423, "Yandex")
 ];
 
-const Tabl = () => {
-  const classes = useStyles();
+const ContactTable = () => {
   return (
     <Container maxWidth="sm">
+      <h1>Контакты</h1>
       <TableContainer>
-        <Table className={classes.table} aria-label="simple table">
+        <Table className="table" aria-label="simple table">
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
@@ -56,4 +50,4 @@ const Tabl = () => {
   );
 };
 
-export default Tabl;
+export default ContactTable;

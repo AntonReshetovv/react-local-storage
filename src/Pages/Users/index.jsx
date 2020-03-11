@@ -1,11 +1,10 @@
 import React from "react";
-import Tabl from "../../Container/Table";
+import ContactTable from "../../Container/ContactTable";
 
 const Contacts = () => {
   return (
     <div>
-      <h1 className="contTitle">Контакты</h1>
-      <Tabl />
+      <ContactTable />
     </div>
   );
 };

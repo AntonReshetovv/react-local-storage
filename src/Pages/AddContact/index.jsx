@@ -1,10 +1,10 @@
 import React from "react";
-import Form from "../../Container/Form";
+import CreateContactForm from "../../Container/CreateContactForm";
 
 const AddContact = () => {
   return (
     <div>
-      <Form />
+      <CreateContactForm />
     </div>
   );
 };

@@ -1,0 +1,7 @@
+.buttons {
+  margin-top: 15px;
+}
+
+.buttons > .favorite {
+  margin-left: 15px;
+}

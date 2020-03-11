@@ -1,8 +1,9 @@
 import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import "./style.css";
 
-const Form = () => {
+const CreateContactForm = () => {
   return (
     <form>
       <TextField id="standard-basic" label="Name" className="input" />
@@ -15,4 +16,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default CreateContactForm;
