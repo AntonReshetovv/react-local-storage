@@ -1,14 +1,19 @@
 import React from "react";
 import "./App.css";
-import Form from "./Container/Form";
-import Tabl from "./Container/Table";
+import AddContact from "./Pages/AddContact";
+import Contacts from "./Pages/Contact";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Form />
-      <Tabl />
-    </div>
+    <Router>
+      <Route exact path="/">
+        <AddContact />
+      </Route>
+      <Route path="/contacts">
+        <Contacts />
+      </Route>
+    </Router>
   );
 }
 
