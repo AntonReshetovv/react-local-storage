@@ -12,6 +12,7 @@ import Buttons from "../../Component/Button";
 const useStyles = makeStyles({
     table: {
       minWidth: 650,
+      marginTop: 30
     },
   });
 
@@ -31,7 +32,7 @@ const Tabl = () =>{
         <div>
         <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
-        <TableHead>
+        <TableHead className="tableHead">
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell align="right">Phone</TableCell>
