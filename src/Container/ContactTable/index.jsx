@@ -22,7 +22,6 @@ const rows = [
 const ContactTable = () => {
   return (
     <Container maxWidth="sm">
-      <h1>Контакты</h1>
       <TableContainer>
         <Table className="table" aria-label="simple table">
           <TableHead>
