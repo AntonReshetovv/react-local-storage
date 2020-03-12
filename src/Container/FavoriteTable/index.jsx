@@ -9,10 +9,6 @@ import Container from "@material-ui/core/Container";
 import "./style.css";
 import AddContactButton from "./AddContactButton";
 
-// function createData(name, phone, email) {
-//   return { name, phone, email };
-// }
-
 const rows = [];
 
 const FavoriteTable = () => {
