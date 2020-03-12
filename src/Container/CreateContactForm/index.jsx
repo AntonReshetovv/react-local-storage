@@ -5,7 +5,7 @@ import "./style.css";
 import ContactTable from "../ContactTable";
 
 const CreateContactForm = () => {
-  const [toggle, setToggle] = React.useState(true);
+  const [toggle, setToggle] = React.useState(false);
   return (
     <form>
       <TextField id="standard-basic" label="Name" className="input" />
