@@ -12,7 +12,7 @@ const ChangeContactForm = () => {
         <TextField id="standard-basic" label="Name" className="input" />
         <TextField id="standard-basic" label="Phone" className="input" />
         <TextField id="standard-basic" label="Email" className="input" />
-        <Link to="/contacts" className="link">
+        <Link to="/" className="link">
           <Button variant="contained" className="button">
             Сохранить
           </Button>

@@ -11,11 +11,9 @@ const ContactActionButtons = () => {
           Изменить
         </Button>
       </Link>
-      <Link to="/favoriteContacts" className="link favorite">
-        <Button variant="contained" color="secondary" className="favorite">
-          Добавить в избранное
-        </Button>
-      </Link>
+      <Button variant="contained" color="secondary" className="favorite">
+        Добавить в избранное
+      </Button>
     </div>
   );
 };

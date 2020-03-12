@@ -1,18 +1,18 @@
 import React from "react";
 import AddContact from "./Pages/AddContact";
-import Contacts from "./Pages/Contacts";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ChangeContact from "./Pages/ChangeContact/index";
 import FavoriteContacts from "./Pages/FavoriteContacts";
+import Main from "./Pages/Main";
 
 function App() {
   return (
     <Router>
       <Route exact path="/">
-        <AddContact />
+        <Main />
       </Route>
-      <Route path="/contacts">
-        <Contacts />
+      <Route path="/addContact">
+        <AddContact />
       </Route>
       <Route path="/changeContact">
         <ChangeContact />

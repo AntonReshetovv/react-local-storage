@@ -10,7 +10,7 @@ const CreateContactForm = () => {
       <TextField id="standard-basic" label="Name" className="input" />
       <TextField id="standard-basic" label="Phone" className="input" />
       <TextField id="standard-basic" label="Email" className="input" />
-      <Link to="/contacts">
+      <Link to="/">
         <Button variant="contained" className="button">
           Сохранить
         </Button>

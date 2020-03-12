@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AddContactButton = () => {
   return (
     <div className="button">
-      <Link to="/contacts" className="addContact">
+      <Link to="/addContact" className="addContact">
         <Button variant="contained" color="primary">
           Добавить контакт
         </Button>
