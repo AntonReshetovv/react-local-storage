@@ -1,6 +1,6 @@
 import React from "react";
 import AddContact from "./Pages/AddContact";
-import Contacts from "./Pages/Users";
+import Users from "./Pages/Users";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <AddContact />
       </Route>
       <Route path="/users">
-        <Contacts />
+        <Users />
       </Route>
     </Router>
   );

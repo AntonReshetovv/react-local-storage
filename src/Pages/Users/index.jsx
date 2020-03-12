@@ -1,11 +1,11 @@
 import React from "react";
 import ContactTable from "../../Container/ContactTable";
 
-const Contacts = () => {
+const Users = () => {
   return (
     <div>
       <ContactTable />
     </div>
   );
 };
-export default Contacts;
+export default Users;
