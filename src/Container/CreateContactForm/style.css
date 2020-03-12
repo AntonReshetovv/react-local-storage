@@ -1,14 +1,14 @@
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  form > .button {
-    margin-top: 15px;
-  }
-  
-  form > .input {
-    margin-bottom: 15px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form > .button {
+  margin-top: 15px;
+}
+
+form > .input {
+  margin-bottom: 15px;
+}

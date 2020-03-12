@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import "./style.css";
 
-const Buttons = () => {
+const ContactActionButtons = () => {
   return (
     <div className="buttons">
       <Button variant="contained" color="primary" className="edit">
@@ -15,4 +15,4 @@ const Buttons = () => {
   );
 };
 
-export default Buttons;
+export default ContactActionButtons;
