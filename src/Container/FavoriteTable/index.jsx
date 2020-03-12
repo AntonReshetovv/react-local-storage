@@ -5,24 +5,20 @@ import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import ContactActionButtons from "./ContactActionButtons/index";
 import Container from "@material-ui/core/Container";
 import "./style.css";
+import AddContactButton from "./AddContactButton";
 
-function createData(name, phone, email) {
-  return { name, phone, email };
-}
+// function createData(name, phone, email) {
+//   return { name, phone, email };
+// }
 
-const rows = [
-  createData("Kris", 89345, "Google"),
-  createData("Den", 3245, "Rambler"),
-  createData("Bill", 56423, "Yandex")
-];
+const rows = [];
 
-const ContactTable = () => {
+const FavoriteTable = () => {
   return (
     <Container maxWidth="sm">
-      <h1>Контакты</h1>
+      <h1>Избранные контакты</h1>
       <TableContainer>
         <Table className="table" aria-label="simple table">
           <TableHead>
@@ -37,7 +33,6 @@ const ContactTable = () => {
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row">
                   {row.name}
-                  <ContactActionButtons />
                 </TableCell>
                 <TableCell align="right">{row.phone}</TableCell>
                 <TableCell align="right">{row.email}</TableCell>
@@ -46,8 +41,9 @@ const ContactTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <AddContactButton />
     </Container>
   );
 };
 
-export default ContactTable;
+export default FavoriteTable;
