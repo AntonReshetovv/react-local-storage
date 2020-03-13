@@ -1,9 +1,9 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import AddContact from "../../Pages/AddContact/index";
-import Main from "../../Pages/Main/index";
-import ChangeContact from "../../Pages/ChangeContact/index";
-import FavoriteContacts from "../../Pages/FavoriteContacts/index";
+import AddContact from "../../Pages/AddContact";
+import Main from "../../Pages/Main/";
+import ChangeContact from "../../Pages/ChangeContact";
+import FavoriteContacts from "../../Pages/FavoriteContacts";
 
 const SwitchContainer = () => {
   return (

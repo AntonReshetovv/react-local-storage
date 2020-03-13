@@ -12,3 +12,7 @@ form > .button {
 form > .input {
   margin-bottom: 15px;
 }
+
+link {
+  text-decoration: none;
+}
