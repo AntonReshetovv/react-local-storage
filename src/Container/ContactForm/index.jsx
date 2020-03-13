@@ -4,7 +4,7 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import "./style.css";
 
-const ContactForm = (props) => {
+const ContactForm = props => {
   return (
     <form>
       <TextField id="standard-basic" label="Name" className="input" />
@@ -12,8 +12,8 @@ const ContactForm = (props) => {
       <TextField id="standard-basic" label="Email" className="input" />
       <Link to="/" className="link">
         <Button variant="contained" className="button">
-          {props.isContactNew ? 'Добавить' : 'Обновить'}
-        </Button>     
+          {props.isContactNew ? "Добавить" : "Обновить"}
+        </Button>
       </Link>
     </form>
   );
