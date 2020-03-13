@@ -1,11 +1,11 @@
 import React from "react";
-import FavoriteTable from "../../Container/FavoriteTable";
+import ContactTable from "../../Container/ContactTable";
 
 
 const FavoriteContacts = () => {
   return (
     <div>
-      <FavoriteTable />
+      <ContactTable/>
     </div>
   );
 };
