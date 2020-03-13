@@ -58,21 +58,21 @@ const Layout = ({ children }) => {
     <div>
       <div className={classes.toolbar} />
       <List>
-        <ListItem button>
-          <ListItemText>
-            <Link to="/">Главная</Link>
-          </ListItemText>
-        </ListItem>
-        <ListItem button>
-          <ListItemText>
-            <Link to="/addContact">Добавить контакт</Link>
-          </ListItemText>
-        </ListItem>
-        <ListItem button>
-          <ListItemText>
-            <Link to="/favoriteContacts">Избранное</Link>
-          </ListItemText>
-        </ListItem>
+        <Link to="/">
+          <ListItem button>
+            <ListItemText>Главная</ListItemText>
+          </ListItem>
+        </Link>
+        <Link to="/addContact">
+          <ListItem button>
+            <ListItemText>Добавить контакт</ListItemText>
+          </ListItem>
+        </Link>
+        <Link to="/favoriteContacts">
+          <ListItem button>
+            <ListItemText>Избранное</ListItemText>
+          </ListItem>
+        </Link>
       </List>
     </div>
   );

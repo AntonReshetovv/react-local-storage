@@ -1,24 +1,24 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import ContactTable from "../../Container/ContactTable/index";
-import CreateContactForm from "../../Container/CreateContactForm/index";
-import ChangeContactForm from "../../Container/ChangeContactForm/index";
-import FavoriteTable from "../../Container/FavoriteTable/index";
+import AddContact from "../../Pages/AddContact/index";
+import Main from "../../Pages/Main/index";
+import ChangeContact from "../../Pages/ChangeContact/index";
+import FavoriteContacts from "../../Pages/FavoriteContacts/index";
 
 const SwitchContainer = () => {
   return (
     <Switch>
       <Route exact path="/">
-        <ContactTable />
+        <Main />
       </Route>
       <Route path="/addContact">
-        <CreateContactForm />
+        <AddContact />
       </Route>
       <Route path="/changeContact">
-        <ChangeContactForm />
+        <ChangeContact />
       </Route>
       <Route path="/favoriteContacts">
-        <FavoriteTable />
+        <FavoriteContacts />
       </Route>
     </Switch>
   );
