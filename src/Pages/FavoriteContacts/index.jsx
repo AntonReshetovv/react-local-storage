@@ -7,7 +7,6 @@ const FavoriteContacts = () => {
   }
 
   const rows = [createData("Kris", 89345, "Google")];
-
   return (
     <div>
       <ContactTable contacts={rows} />

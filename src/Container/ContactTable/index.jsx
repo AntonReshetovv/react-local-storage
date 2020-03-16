@@ -10,8 +10,8 @@ import Container from "@material-ui/core/Container";
 import "./style.css";
 
 const ContactTable = (props) => {
-  return (
-    <Container maxWidth="sm">
+    return (
+      <Container maxWidth="sm">
       <TableContainer>
         <Table className="table" aria-label="simple table">
           <TableHead>
@@ -19,17 +19,18 @@ const ContactTable = (props) => {
               <TableCell>Name</TableCell>
               <TableCell align="right">Phone</TableCell>
               <TableCell align="right">Email</TableCell>
+              <TableCell align="right"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {props.contacts.map(row => (
-              <TableRow key={row.name}>
+              <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
                   {row.name}
-                  <ContactActionButtons />
                 </TableCell>
                 <TableCell align="right">{row.phone}</TableCell>
                 <TableCell align="right">{row.email}</TableCell>
+                <TableCell align="right"><ContactActionButtons delet={props.deletRows}/></TableCell>
               </TableRow>
             ))}
           </TableBody>
