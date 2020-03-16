@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import AddContact from "../../Pages/AddContact";
-import Main from "../../Pages/Main/";
+import Main from "../../Pages/Main";
 import ChangeContact from "../../Pages/ChangeContact";
 import FavoriteContacts from "../../Pages/FavoriteContacts";
 
-const SwitchContainer = () => {
+const Switcher = () => {
   return (
     <Switch>
       <Route exact path="/">
@@ -24,4 +24,4 @@ const SwitchContainer = () => {
   );
 };
 
-export default SwitchContainer;
+export default Switcher;

@@ -1,11 +1,16 @@
 import React from "react";
-import FavoriteTable from "../../Container/FavoriteTable";
-
+import ContactTable from "../../Container/ContactTable";
 
 const FavoriteContacts = () => {
+  function createData(name, phone, email) {
+    return { name, phone, email };
+  }
+
+  const rows = [createData("Kris", 89345, "Google")];
+
   return (
     <div>
-      <FavoriteTable />
+      <ContactTable contacts={rows} />
     </div>
   );
 };

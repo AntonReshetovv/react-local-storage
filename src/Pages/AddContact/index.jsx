@@ -1,12 +1,13 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import CreateContactForm from "../../Container/CreateContactForm/index"
+import ContactForm from "../../Container/ContactForm";
 import "./style.css";
 
 const AddContact = () => {
   return (
     <Container maxWidth="sm">
-      <CreateContactForm />
+      <h2>Создание контакта</h2>
+      <ContactForm isContactNew={true}/>
     </Container>
   );
 };

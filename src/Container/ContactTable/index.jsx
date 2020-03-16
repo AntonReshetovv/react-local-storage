@@ -9,17 +9,7 @@ import ContactActionButtons from "./ContactActionButtons/index";
 import Container from "@material-ui/core/Container";
 import "./style.css";
 
-function createData(name, phone, email) {
-  return { name, phone, email };
-}
-
-const rows = [
-  createData("Kris", 89345, "Google"),
-  createData("Den", 3245, "Rambler"),
-  createData("Bill", 56423, "Yandex")
-];
-
-const ContactTable = () => {
+const ContactTable = (props) => {
   return (
     <Container maxWidth="sm">
       <TableContainer>
@@ -32,7 +22,7 @@ const ContactTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map(row => (
+            {props.contacts.map(row => (
               <TableRow key={row.name}>
                 <TableCell component="th" scope="row">
                   {row.name}

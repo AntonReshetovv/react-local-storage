@@ -1,11 +1,13 @@
 import React from "react";
-import ChangeContactForm from "../../Container/ChangeContactForm";
+import ContactForm from "../../Container/ContactForm";
+import Container from "@material-ui/core/Container";
 
 const ChangeContact = () => {
   return (
-    <div>
-      <ChangeContactForm />
-    </div>
+    <Container maxWidth="sm">
+      <h2>Обновление контакта</h2>
+      <ContactForm isContactNew={false}/>
+    </Container>
   );
 };
 
