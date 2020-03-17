@@ -6,10 +6,20 @@ import "./style.css";
 const ContactActionButtons = (props) => {
   return (
     <div className="actionButtons">
-        <Button variant="contained" color="primary" className="edit" onClick={props.deletRows}>
-          Изменить
-        </Button>
-      <Button variant="contained" color="secondary" className="favorite">
+      <Button
+        variant="contained"
+        color="primary"
+        className="edit"
+        onClick={props.onUpdate}
+      >
+        Изменить
+      </Button>
+      <Button
+        variant="contained"
+        color="secondary"
+        className="favorite"
+        onClick={props.onFavorite}
+      >
         Добавить в избранное
       </Button>
     </div>

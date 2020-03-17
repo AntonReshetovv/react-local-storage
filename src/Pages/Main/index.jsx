@@ -21,16 +21,19 @@ const Main = (props) => {
     setRows(newRows);
   }
 
-  function deletRows(){
-    const newRows = rows.slice(0,-1);
-    setRows(newRows);
+  function deletRows(id) {
+    const newRows = rows.filter(contact => contact.id !== id)
+    setRows(newRows)
   }
 
   return (
     <div>
-      <button onClick={deletRows}>удалить</button>
-      <button onClick={addRows}>Кнопка</button>
-      <ContactTable contacts={rows} delet={deletRows}/>
+      <button onClick={addRows}>Добавить</button>
+      <ContactTable
+        contacts={rows}
+        deleteContact={deletRows}
+        toggleFavorite={() => console.log()}
+      />
     </div>
   );
 };

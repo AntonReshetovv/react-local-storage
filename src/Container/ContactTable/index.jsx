@@ -30,7 +30,12 @@ const ContactTable = (props) => {
                 </TableCell>
                 <TableCell align="right">{row.phone}</TableCell>
                 <TableCell align="right">{row.email}</TableCell>
-                <TableCell align="right"><ContactActionButtons delet={props.deletRows}/></TableCell>
+                <TableCell align="right">
+                  <ContactActionButtons
+                    onUpdate={() => props.deleteContact(row.id)}
+                    onFavorite={() => props.toggleFavorite(row.id)}
+                  />
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
