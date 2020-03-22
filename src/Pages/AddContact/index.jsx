@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import Container from "@material-ui/core/Container";
 import ContactForm from "../../Container/ContactForm";
+import {useLocalStorage} from "../../LocalStorageHooks";
 import "./style.css";
 
 const AddContact = () => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState("");
+  const [name, setName] = useLocalStorage("name","");
+  const [phone, setPhone] = useLocalStorage("phone","");
+  const [email, setEmail] = useLocalStorage("email","");
 
   return (
     <Container maxWidth="sm">
@@ -19,7 +20,7 @@ const AddContact = () => {
         name={name}
         phone={phone}
         email={email}
-        click = {()=>console.log('я кликнул')}
+        click={()=>console.log('click')}
       />
     </Container>
   );
