@@ -5,32 +5,49 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const ContactForm = props => {
+
+  const initValue = props.user || { name: "", phone: "", email: "" }
+
+  const [user, setUser] = React.useState(initValue);
+  function updateKey(key, event) {
+    setUser({
+      name: user.name,
+      phone: user.phone,
+      email: user.email,
+      [key]: event.target.value
+    });
+  }
+
+  function onSubmit() {
+    props.onSubmit(user);
+  }
+
   return (
     <form>
       <TextField
         id="standard-basic"
         label="Name"
         className="input"
-        value={props.name}
-        onChange={props.setName}
+        value={user.name}
+        onChange={e => updateKey("name", e)}
       />
       <TextField
         id="standard-basic"
         label="Phone"
         className="input"
-        value={props.phone}
-        onChange={props.setPhone}
+        value={user.phone}
+        onChange={e => updateKey("phone", e)}
       />
       <TextField
         id="standard-basic"
         label="Email"
         className="input"
-        value={props.email}
-        onChange={props.setEmail}
+        value={user.email}
+        onChange={e => updateKey("email", e)}
       />
       <Link to="/" className="link">
-        <Button variant="contained" className="button" onClick={props.click}>
-          {props.isContactNew ? "Добавить" : "Обновить"}
+        <Button variant="contained" className="button" onClick={onSubmit}>
+          {props.user ? "Обновить" : "Добавить"}
         </Button>
       </Link>
     </form>

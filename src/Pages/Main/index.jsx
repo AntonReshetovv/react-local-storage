@@ -2,36 +2,26 @@ import React from "react";
 import "./style.css";
 import ContactTable from "../../Container/ContactTable";
 
-const Main = (props) => {
-  function createData(id, name, phone, email) {
-    return { id, name, phone, email };
-  }
+const Main = props => {
 
-  const [rows, setRows] = React.useState([
-    createData(0, "Kris", 89345, "Google"),
-    createData(1, "Den", 3245, "Rambler"),
-    createData(2, "Bill", 56423, "Yandex")
-  ]);
+  const initValue = window.localStorage.getItem("users") || "[]";
 
-  function addRows() {
-    const newRows = [
-      ...rows,
-      createData(rows.length + 1, "Kriss", 89345, "Google")
-    ];
-    setRows(newRows);
-  }
+  const [users, setUsers] = React.useState(JSON.parse(initValue));
 
-  function deletRows(id) {
-    const newRows = rows.filter(contact => contact.id !== id)
-    setRows(newRows)
+  React.useEffect(() => {
+    window.localStorage.setItem("users", JSON.stringify(users));
+  });
+
+  function deleteUserById(id) {
+    const newRows = users.filter(contact => contact.id !== id);
+    setUsers(newRows);
   }
 
   return (
     <div>
-      <button onClick={addRows}>Добавить</button>
       <ContactTable
-        contacts={rows}
-        deleteContact={deletRows}
+        contacts={users}
+        deleteContact={deleteUserById}
         toggleFavorite={() => console.log()}
       />
     </div>

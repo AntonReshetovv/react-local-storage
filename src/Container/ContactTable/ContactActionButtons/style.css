@@ -1,11 +1,3 @@
-.actionButtons {
-  margin-top: 15px;
-}
-
-.actionButtons > .link {
-  text-decoration: none;
-}
-
-.actionButtons > .favorite {
-  margin-left: 5px;
+span > button:first-child {
+  margin-right: 15px;
 }

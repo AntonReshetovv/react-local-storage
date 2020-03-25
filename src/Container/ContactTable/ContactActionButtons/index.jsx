@@ -1,18 +1,19 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import Icon from '@material-ui/core/Icon'
 import "./style.css";
 //import { Link } from "react-router-dom";
 
 const ContactActionButtons = (props) => {
   return (
-    <div className="actionButtons">
+    <span>
       <Button
         variant="contained"
         color="primary"
         className="edit"
         onClick={props.onUpdate}
       >
-        Изменить
+        <Icon>edit</Icon>
       </Button>
       <Button
         variant="contained"
@@ -20,9 +21,9 @@ const ContactActionButtons = (props) => {
         className="favorite"
         onClick={props.onFavorite}
       >
-        Добавить в избранное
+        <Icon>favorite</Icon>
       </Button>
-    </div>
+    </span>
   );
 };
 
