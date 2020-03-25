@@ -63,12 +63,12 @@ const Layout = ({ children }) => {
             <ListItemText>Главная</ListItemText>
           </ListItem>
         </Link>
-        <Link to="/addContact">
+        <Link to="/add">
           <ListItem button>
             <ListItemText>Добавить контакт</ListItemText>
           </ListItem>
         </Link>
-        <Link to="/favoriteContacts">
+        <Link to="/favorites">
           <ListItem button>
             <ListItemText>Избранное</ListItemText>
           </ListItem>

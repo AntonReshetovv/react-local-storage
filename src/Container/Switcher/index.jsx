@@ -11,13 +11,13 @@ const Switcher = () => {
       <Route exact path="/">
         <Main />
       </Route>
-      <Route path="/addContact">
+      <Route path="/add">
         <AddContact />
       </Route>
-      <Route path="/changeContact">
+      <Route path="/edit/:id">
         <ChangeContact />
       </Route>
-      <Route path="/favoriteContacts">
+      <Route path="/favorites">
         <FavoriteContacts />
       </Route>
     </Switch>
