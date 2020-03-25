@@ -14,7 +14,7 @@ const Switcher = () => {
       <Route path="/add">
         <AddContact />
       </Route>
-      <Route path="/edit/:id">
+      <Route path="/edit/:user_id">
         <ChangeContact />
       </Route>
       <Route path="/favorites">

@@ -1,8 +1,13 @@
 import React from "react";
+import {
+  useHistory
+} from "react-router-dom";
 import "./style.css";
 import ContactTable from "../../Container/ContactTable";
 
 const Main = props => {
+
+  let history = useHistory();
   // переменная initValue, получает значение из localStorage,
   // или если нету этих значений, то получает пустой массив
   const initValue = window.localStorage.getItem("users") || "[]";
@@ -16,16 +21,15 @@ const Main = props => {
     window.localStorage.setItem("users", JSON.stringify(users));
   });
 
-  function deleteUserById(id) {
-    const newRows = users.filter(contact => contact.id !== id);
-    setUsers(newRows);
+  function navigateToEditPage(id) {
+    history.push('/edit/' + id)
   }
 
   return (
     <div>
       <ContactTable
         contacts={users}
-        deleteContact={deleteUserById}
+        onUpdate={navigateToEditPage}
         toggleFavorite={() => console.log()}
       />
     </div>
