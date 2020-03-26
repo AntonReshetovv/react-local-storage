@@ -9,9 +9,11 @@ const ChangeContact = () => {
   let { user_id } = useParams();
   const users = JSON.parse(window.localStorage.getItem('users'));
   const user = users.find((user) => user.id === +user_id);
-
-  function updateUserInLocalStorage(updatedUser) {
   
+  function updateUserInLocalStorage(updatedUser) {
+    const indexWhereUser = users.findIndex(({id}) => id === user.id);
+    users[indexWhereUser] = updatedUser;
+    window.localStorage.setItem('users',JSON.stringify(users))
   }
 
   return (

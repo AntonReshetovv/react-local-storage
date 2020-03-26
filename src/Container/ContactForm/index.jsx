@@ -8,7 +8,7 @@ const ContactForm = props => {
   //Пояснение: Есть переменная, которая принимает значение, props.user,
   //когда форма заполненная, или переменная принимает значение объекта , 
   //с ее свойствами и пустыми значениями свойства.
-  const initValue = props.user || { name: "", phone: "", email: "" }
+  const initValue = props.user || { name: "", phone: "", email: "",isFav: false }
   // Пояснение:Есть сам стейт, которое принимает как изначальное состояние,
   // переменную initValue.
   const [user, setUser] = React.useState(initValue);
@@ -18,9 +18,7 @@ const ContactForm = props => {
   //которое изменияет значение поля
   function updateKey(key, event) {
     setUser({
-      name: user.name,
-      phone: user.phone,
-      email: user.email,
+      ...user,
       [key]: event.target.value
     });
   }
