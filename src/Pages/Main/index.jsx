@@ -6,13 +6,16 @@ import "./style.css";
 import ContactTable from "../../Container/ContactTable";
 
 const Main = props => {
+//Пояснение: Страничка получает данные в state из localStorage,
+// и отрисовывает эти данные в таблице
+//Функция navigateToEditPage прокидывается через пропсы в таблицу на кнопку edit
+//эта функция выполняет роль добавляет в url id пользователя, это id она получает со всеми 
+//данными из localStorage
 
   let history = useHistory();
-  // переменная initValue, получает значение из localStorage,
-  // или если нету этих значений, то получает пустой массив
+ 
   const initValue = window.localStorage.getItem("users") || "[]";
-  //State который принимает в качестве изначального значение переменную initValue,
-  //которую JSON.parse для того, чтобы мы получили объект из localStorage в таблицу
+ 
   const [users, setUsers] = React.useState(JSON.parse(initValue));
 
   React.useEffect(() => {
