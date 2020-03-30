@@ -32,7 +32,7 @@ const ContactTable = (props) => {
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">
                   <ContactActionButtons
-                    onUpdate={() => props.deleteContact(row.id)}
+                    onUpdate={() => props.onUpdate(row.id)}
                     onFavorite={() => props.toggleFavorite(row.id)}
                   />
                 </TableCell>

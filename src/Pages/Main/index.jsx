@@ -1,13 +1,21 @@
 import React from "react";
+import {
+  useHistory
+} from "react-router-dom";
 import "./style.css";
 import ContactTable from "../../Container/ContactTable";
 
-const Main = props => {
-  // переменная initValue, получает значение из localStorage,
-  // или если нету этих значений, то получает пустой массив
+const Main = () => {
+//Пояснение: Страничка получает данные в state из localStorage,
+// и отрисовывает эти данные в таблице
+//Функция navigateToEditPage прокидывается через пропсы в таблицу на кнопку edit
+//эта функция выполняет роль добавляет в url id пользователя, это id она получает со всеми 
+//данными из localStorage
+
+  let history = useHistory();
+ 
   const initValue = window.localStorage.getItem("users") || "[]";
-  //State который принимает в качестве изначального значение переменную initValue,
-  //которую JSON.parse для того, чтобы мы получили объект из localStorage в таблицу
+ 
   const [users, setUsers] = React.useState(JSON.parse(initValue));
 
   React.useEffect(() => {
@@ -16,17 +24,21 @@ const Main = props => {
     window.localStorage.setItem("users", JSON.stringify(users));
   });
 
-  function deleteUserById(id) {
-    const newRows = users.filter(contact => contact.id !== id);
-    setUsers(newRows);
+  function navigateToEditPage(id) {
+    history.push('/edit/' + id)
   }
-
+  
+  function changeFavorite(id) {
+    const indexWhereUser = users.findIndex(user => user.id === id)
+    users[indexWhereUser].isFav = !users[indexWhereUser].isFav
+    window.localStorage.setItem('users',JSON.stringify(users))
+  }
   return (
     <div>
       <ContactTable
         contacts={users}
-        deleteContact={deleteUserById}
-        toggleFavorite={() => console.log()}
+        onUpdate={navigateToEditPage}
+        toggleFavorite={changeFavorite}
       />
     </div>
   );

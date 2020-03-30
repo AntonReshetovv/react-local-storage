@@ -4,16 +4,18 @@ import ContactForm from "../../Container/ContactForm";
 import "./style.css";
 
 const AddContact = (props) => {
-//Пояснение: Страничка AddContaсt состоит из контейнера формы контакта, и функции
-//Фунция saveInStorage(user), принимает параметр user, этот параметр является объектом
-//Сама функция, нужна для того, чтобы Сохранять данные в localStorage
+//Идея страничке AddContact,это связать форму с функцией, которая при нажатие на кнопку,
+//отправляет данные в localStorage
+
+//Пояснение: Функция, получила массив состоящая из объекта с ключами name,phone,email 
+//Добавила в объект новое свойство id, которое высчитывается рандомно
+//Отправила объект(данные) уже с id в localStorage.
   function saveInStorage(user) {
     const users = JSON.parse(window.localStorage.getItem('users'));
     users.push({
       id: Math.floor(Math.random() * 10000),
       ...user
     });
-    //отдает данные в localStorage
     window.localStorage.setItem('users', JSON.stringify(users))
   }
   return (
