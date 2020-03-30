@@ -5,7 +5,7 @@ import {
 import "./style.css";
 import ContactTable from "../../Container/ContactTable";
 
-const Main = props => {
+const Main = () => {
 //Пояснение: Страничка получает данные в state из localStorage,
 // и отрисовывает эти данные в таблице
 //Функция navigateToEditPage прокидывается через пропсы в таблицу на кнопку edit
@@ -27,13 +27,18 @@ const Main = props => {
   function navigateToEditPage(id) {
     history.push('/edit/' + id)
   }
-
+  
+  function changeFavorite(id) {
+    const indexWhereUser = users.findIndex(user => user.id === id)
+    users[indexWhereUser].isFav = !users[indexWhereUser].isFav
+    window.localStorage.setItem('users',JSON.stringify(users))
+  }
   return (
     <div>
       <ContactTable
         contacts={users}
         onUpdate={navigateToEditPage}
-        toggleFavorite={() => console.log()}
+        toggleFavorite={changeFavorite}
       />
     </div>
   );

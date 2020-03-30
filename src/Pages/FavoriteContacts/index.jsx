@@ -14,7 +14,8 @@ const FavoriteContacts = () => {
   // как настоящего избранного в localStorage
   const allUsers = JSON.parse(window.localStorage.getItem('users'))
   const users = allUsers.filter((user)=> user.isFav)
-  function changeFavorite(id,event) {
+
+  function changeFavorite(id) {
     const indexWhereUser = allUsers.findIndex(user => user.id === id)
     allUsers[indexWhereUser].isFav = !allUsers[indexWhereUser].isFav
     window.localStorage.setItem('users',JSON.stringify(users))
